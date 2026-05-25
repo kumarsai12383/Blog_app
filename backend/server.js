@@ -13,7 +13,10 @@ const app = express();
 // ============== MIDDLEWARE ==============
 
 // Enable CORS - Allow requests from frontend
-app.use(cors());
+app.use(cors({
+  origin: "https://blog-app-iota-sandy.vercel.app/",
+  credentials: true
+}));
 
 // Parse JSON request body
 app.use(express.json());
