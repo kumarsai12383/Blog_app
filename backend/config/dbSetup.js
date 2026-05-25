@@ -8,19 +8,15 @@ dotenv.config();
 const connectDB = async () => {
   try {
     // Get MongoDB URI from environment variables
-    const mongoURI =
-      process.env.MONGODB_URI;
+    const mongoURI = process.env.MONGODB_URI;
 
-    // Connect to MongoDB
-    await mongoose.connect(mongoURI, {
-     
-    });
+    await mongoose.connect(mongoURI);
 
     console.log("✅ MongoDB connected successfully");
     return true;
   } catch (error) {
     console.error("❌ MongoDB connection error:", error.message);
-    process.exit(1);
+    
   }
 };
 
